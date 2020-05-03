@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="cnt">
+    <div>
+        <div class="svikor">
+            <h2>Registered users:</h2>
+            <ul (click)="onClick($event)" *ngIf="usersLoaded">
+                <li *ngFor="let user of users">{{ user.username }}</li>
+            </ul>
+        </div>
+        <div class="onlinekor">
+            <h2>Online users:</h2>
+            <ul (click)="onClick($event)" *ngIf="onlineLoaded">
+                <li>All</li>
+                <li *ngFor="let user of onlineUsers">{{ user.username }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mess">
+        <input type="text" [(ngModel)]="selectedUser" placeholder="Send to">
+        <input type="text" [(ngModel)]="messageSubject" placeholder="Subject">
+        <textarea rows="4" cols="50" [(ngModel)]="messageContent" placeholder="Message content"></textarea>
+        <button class="btn btn-success btnsend" (click)="send()">Send message</button>
+    </div>
+
+    <div *ngIf="messagesLoaded">
+        <div class="msgs" *ngFor="let message of messages">
+            <app-message [message]="message">
+            </app-message>
+        </div>
+    </div>
+</div>

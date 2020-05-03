@@ -1,0 +1,20 @@
+li {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+.mess {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.btnsend {
+    width: 20%;
+    margin-left: auto;
+}
+
+.cnt {
+    margin-top: 65px;
+}
